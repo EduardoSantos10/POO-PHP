@@ -1,16 +1,17 @@
 <?php
-    namespace PHP\Modelo;
+    namespace PHP\Modelo; // define o local do projeto
     require_once("Pessoa.php");
+    require_once("Endereco.php");
     use PHP\Modelo\Pessoa;
+    use PHP\Modelo\Endereco;
 
     // Classe
-    class Cliente extends Pessoa{
+    class Cliente extends Pessoa {
         protected float $precoTotal;
 
         //Construtor
-        public function __construct(string $cpf, string $nome, string $telefone, string $endereco, float $precoTotal){
-
-
+        public function __construct(string $cpf, string $nome, string $telefone, Endereco $endereco, float $precoTotal){
+            
             // "THIS" diferenciar var de parametro
             parent::__construct($cpf, $nome, $telefone, $endereco); // ::parent -> sempre chama o metodo da classe pai
             $this->precoTotal = $precoTotal;

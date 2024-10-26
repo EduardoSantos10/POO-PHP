@@ -1,20 +1,22 @@
 <?php
     
     namespace PHP\Modelo;
+    require_once("Endereco.php");
+    use PHP\Modelo\Endereco;
 
 
-    class pessoa{
+    class Pessoa{
 
         // criando as vars
         protected string $cpf;
         protected string $nome;
         protected string $telefone;
-        protected string $endereco;
+        protected Endereco $endereco;
 
         // protected -> uso em herança, apenas as classes da familia (que herda a classe) encherga essa classe
 
 
-        public function __construct(string $cpf, string $nome, string $telefone, string $endereco){
+        public function __construct(string $cpf, string $nome, string $telefone, Endereco $endereco){
 
             // "THIS" diferenciar var de parametro
             $this->cpf = $cpf;
@@ -38,8 +40,7 @@
         public function imprimir():string{
             return "<br>CPF: ".$this->cpf.
                    "<br>Nome: ".$this->nome.
-                   "<br>Telefone: ".$this->telefone.
-                   "<br>Endereço: ".$this->endereco;
+                   "<br>Telefone: ".$this->telefone;
         }
 
 
